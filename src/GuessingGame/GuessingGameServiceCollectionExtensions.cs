@@ -20,6 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
             
             // Add a guessing game - shared instance per scope
             services.TryAddTransient<LocalGuessingGame>();
+            services.TryAddTransient<DistributedGuessingGame>();
             services.TryAddTransient<IGuessingGame>(provider =>
             {
                 var options = provider.GetRequiredService<IOptionsMonitor<GameOptions>>();
@@ -27,6 +28,8 @@ namespace Microsoft.Extensions.DependencyInjection
                 {
                     case "local":
                         return provider.GetRequiredService<LocalGuessingGame>();
+                    case "distributed":
+                        return provider.GetRequiredService<DistributedGuessingGame>();
                     default:
                         return provider.GetRequiredService<LocalGuessingGame>();
                 }
@@ -70,6 +73,7 @@ namespace Microsoft.Extensions.DependencyInjection
             
             services.TryAddSingleton<IConfiguration>(configurationRoot);
             services.Configure<GameOptions>(configurationRoot.GetSection("game"));
+            services.Configure<HubOptions>(configurationRoot.GetSection("hub"));
             
             return configurationRoot;
         }

@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Configuration;
 
 namespace GuessingGame
 {
@@ -9,8 +11,13 @@ namespace GuessingGame
         {
             var serviceCollection = new ServiceCollection();
             
-            serviceCollection.AddConfiguration(args);
+            var config = serviceCollection.AddConfiguration(args);
             serviceCollection.AddGuessingGame();
+            serviceCollection.AddLogging(builder =>
+            {
+                builder.AddConfiguration(config.GetSection("Logging"));
+                builder.AddConsole();
+            });
 
             var provider = serviceCollection.BuildServiceProvider();
 
