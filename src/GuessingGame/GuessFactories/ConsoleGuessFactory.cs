@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GuessingGame
+namespace GuessingGame.GuessFactories
 {
     public class ConsoleGuessFactory : IGuessFactory
     {

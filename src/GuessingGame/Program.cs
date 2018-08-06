@@ -8,14 +8,24 @@ namespace GuessingGame
         static void Main(string[] args)
         {
             var serviceCollection = new ServiceCollection();
-
+            
+            serviceCollection.AddConfiguration(args);
             serviceCollection.AddGuessingGame();
 
             var provider = serviceCollection.BuildServiceProvider();
 
-            var game = provider.GetRequiredService<LocalGuessingGame>();
-            
-            game.RunGame();
+            bool keepGoing = true;
+
+            while (keepGoing)
+            {
+                var game = provider.GetRequiredService<IGuessingGame>();
+
+                game.RunGame();
+                
+                Console.WriteLine("Another? (Y/N)");
+                var answer = Console.ReadLine();
+                keepGoing = answer?.ToLower() == "y";
+            }            
         }
     }
 }

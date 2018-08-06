@@ -2,7 +2,7 @@
 
 namespace GuessingGame
 {
-    public class LocalGuessingGame
+    public class LocalGuessingGame : IGuessingGame
     {
         private readonly RandomNumber _targetNumber;
         private readonly IGuessFactory _guessFactory;
@@ -20,19 +20,21 @@ namespace GuessingGame
         {
             int? comparison = null;
 
+            Console.WriteLine($"Guess a random number between {_targetNumber.Min} and {_targetNumber.Max}.");
+            
             do
             {
                 var guess = _guessFactory.GetNextGuess();
 
                 comparison = guess.CompareTo(_targetNumber.Value);
-
+                
                 if (comparison == 0)
                 {
-                    Console.WriteLine("You win!");
+                    Console.WriteLine($"You guessed: {guess}, You win!");
                 }
                 else
                 {
-                    Console.WriteLine(comparison > 0 ? "Lower" : "Higher");
+                    Console.WriteLine($"You guessed: {guess}, number is {(comparison > 0 ? "lower" : "higher")}");
                 }
             } while (comparison != 0);
             
