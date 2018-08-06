@@ -8,7 +8,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "configuration", "examples\c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logging", "examples\logging\logging.csproj", "{6B473C95-B1F9-4D0B-BF16-26C61E124A13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessingGame", "src\GuessingGame\GuessingGame.csproj", "{F69622B4-5D32-4172-BEDF-4735720FA51D}"
+EndProject
 Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B791D634-7EEA-42C4-8B65-F6EBD72BDE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B791D634-7EEA-42C4-8B65-F6EBD72BDE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B791D634-7EEA-42C4-8B65-F6EBD72BDE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B791D634-7EEA-42C4-8B65-F6EBD72BDE45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3088F5-F39B-4E43-9A4F-2A4727017CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3088F5-F39B-4E43-9A4F-2A4727017CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3088F5-F39B-4E43-9A4F-2A4727017CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3088F5-F39B-4E43-9A4F-2A4727017CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69622B4-5D32-4172-BEDF-4735720FA51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69622B4-5D32-4172-BEDF-4735720FA51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69622B4-5D32-4172-BEDF-4735720FA51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69622B4-5D32-4172-BEDF-4735720FA51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B473C95-B1F9-4D0B-BF16-26C61E124A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B473C95-B1F9-4D0B-BF16-26C61E124A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B473C95-B1F9-4D0B-BF16-26C61E124A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B473C95-B1F9-4D0B-BF16-26C61E124A13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 EndGlobal
