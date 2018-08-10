@@ -67,9 +67,7 @@ namespace GuessingGame
                     await client.InvokeAsync("GuessMadeResponse", name, "Guess must be a number");
                     return;
                 }
-                
                 var comparison = g.CompareTo(_targetNumber.Value);
-
                 if (comparison == 0)
                 {
                     _logger.LogInformation("We have a winner! {name}", name);
