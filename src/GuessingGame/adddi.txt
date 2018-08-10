@@ -1,0 +1,28 @@
+        static void Main(string[] args)
+        {
+//            var services = new ServiceCollection();
+            
+//            services.AddTransient<RandomNumber>();
+            
+//            services.AddTransient<IGuessingGame, LocalGuessingGame>();
+//            services.AddSingleton((sp => new Random()));
+//            services.AddTransient<IGuessFactory, GuessFactories.ConsoleGuessFactory>();
+//            services.AddTransient<IGuessFactory, GuessFactories.RandomGuessFactory>();
+
+//            services.AddLogging();
+            
+//            var provider = services.BuildServiceProvider();
+
+            bool keepGoing = true;
+
+            while (keepGoing)
+            {
+//                var game = provider.GetRequiredService<IGuessingGame>();
+
+                game.RunGame();
+                
+                Console.WriteLine("Another? (Y/N)");
+                var answer = Console.ReadLine();
+                keepGoing = answer?.ToLower() == "y";
+            }  
+        }

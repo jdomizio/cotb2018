@@ -5,12 +5,13 @@ using Microsoft.Extensions.Options;
 
 namespace GuessingGame
 {
-    public class RandomNumber
+    public class ConfigurableRandomNumber : RandomNumber
     {
-        public RandomNumber(Random rng)
+        public ConfigurableRandomNumber(Random rng, IOptionsMonitor<GameOptions> configuration)
+            : base(rng)
         {
-            Min = 0;
-            Max = 100;
+            Min = configuration.CurrentValue.MinNumber;
+            Max = configuration.CurrentValue.MaxNumber;
             Value = rng.Next(Min, Max);
         }
 

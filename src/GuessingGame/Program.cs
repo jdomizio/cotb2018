@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Configuration;
 
@@ -32,7 +33,7 @@ namespace GuessingGame
                 Console.WriteLine("Another? (Y/N)");
                 var answer = Console.ReadLine();
                 keepGoing = answer?.ToLower() == "y";
-            }            
+            }   
         }
     }
 }

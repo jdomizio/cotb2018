@@ -1,0 +1,33 @@
+        static void Main(string[] args)
+        {
+            var min = 0;
+            var max = 100;
+
+            var random = new Random();
+            
+            int? comparison = null;
+
+            Console.WriteLine($"Guess a random number between {min} and {max}.");
+
+            var targetNumber = random.Next(min, max);
+            
+            do
+            {
+                int guess;
+                while (!int.TryParse(Console.ReadLine(), out guess))
+                {
+                    Console.WriteLine("Must enter a number...");
+                }
+                
+                comparison = guess.CompareTo(targetNumber);
+                
+                if (comparison == 0)
+                {
+                    Console.WriteLine($"You guessed: {guess}, You win!");
+                }
+                else
+                {
+                    Console.WriteLine($"You guessed: {guess}, number is {(comparison > 0 ? "lower" : "higher")}");
+                }
+            } while (comparison != 0);
+        }

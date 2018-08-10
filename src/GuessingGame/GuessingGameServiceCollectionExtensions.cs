@@ -16,7 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static void AddGuessingGame(this IServiceCollection services)
         {
             // Add a random number - everyone gets their own copy
-            services.TryAddTransient<RandomNumber>();
+            services.TryAddTransient<RandomNumber, ConfigurableRandomNumber>();
             
             // Add a guessing game - shared instance per scope
             services.TryAddTransient<LocalGuessingGame>();
